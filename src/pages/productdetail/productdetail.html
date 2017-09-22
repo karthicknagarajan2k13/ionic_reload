@@ -1,0 +1,230 @@
+
+
+
+
+<ion-header>
+  <ion-navbar hideBackButton color="primary">
+
+	
+	
+  <ion-buttons left (click)="back()"  >
+    <a ion-button icon-only>
+    	<ion-icon    name="ios-arrow-back"></ion-icon>
+
+   </a>
+   </ion-buttons>
+   <ion-title>Product Info</ion-title>
+  <ion-buttons (click)="mycart()"   id="notification-button"  right >
+    <a class="icon20 cart" ion-button icon-only>
+    	<ion-icon (click)="back()"    name="cart"></ion-icon>
+  <ion-badge id="notifications-badge" color="danger">{{carcount}}</ion-badge>
+   </a>
+   </ion-buttons>
+   
+   <ion-buttons right>
+  <img  class="icon20 sreach" src="assets/icon/sreach.png" alt="">
+            
+   </ion-buttons>
+ </ion-navbar>
+	
+	
+
+</ion-header>
+
+
+<ion-content class="has-header">
+
+
+	
+	
+	
+<ion-icon (click)="prev()"   class="leftArrow" name="ios-arrow-back"></ion-icon>
+  <ion-icon (click)="next()"   class="rightArrow" name="ios-arrow-forward" right></ion-icon>
+
+<ion-slides pager spaceBetween="250">
+    <ion-slide *ngFor="let category of rescall">
+      
+       <img src="http://aryvartdev.com/reload{{category.image_url}}" /> 
+    </ion-slide>
+</ion-slides>
+
+<hr>
+<ion-row class="head1">
+<ion-col class="colhead">
+{{prod_name}}
+</ion-col>
+
+<!-- <ion-col class="h2c4">
+ <ion-icon  class="saveicon" right (click)="saveProduct(prod_addToCart_id,userid)"  name="md-heart"></ion-icon>
+	
+	</ion-col> -->
+</ion-row>
+
+<ion-row class="head2">
+
+ <ion-col  class="h2c1" style='text-decoration:line-through'   >
+      €{{prod_original_rate}}
+      </ion-col>
+      <ion-col class="textblue" >
+	  
+        €{{prod_offer_rate}}  
+      </ion-col>
+<!--   <ion-col class="h2c3">
+<button class="addbut"  ion-button (click)="addToCart(prod_addToCart_id,userid)">Add to cart</button>
+</ion-col> -->
+     
+
+
+</ion-row>
+<hr>
+<ion-row class="roo">
+<ion-col class="addCart" (click)="addToCart(prod_addToCart_id,userid)">
+<ion-icon class="add_cart"  name="cart"></ion-icon>
+Add to cart
+</ion-col>
+<ion-col class="savePro" (click)="saveProduct(prod_addToCart_id,userid)">
+<ion-icon class="save_heart"  name="md-heart"></ion-icon>
+Save
+</ion-col>
+</ion-row>
+
+ 
+<ion-toolbar no-border-top>
+    <ion-segment class="prod_seg" [(ngModel)]="prod">
+	 <ion-segment-button value="overview">
+        Overview
+      </ion-segment-button>
+      <ion-segment-button value="description">
+        Description
+      </ion-segment-button>
+      <ion-segment-button value="rating">
+        Rating
+      </ion-segment-button>
+      <ion-segment-button value="relatedprod">
+        Related Products
+      </ion-segment-button>
+  
+	    <ion-segment-button value="shippingdetails">
+        Shipping 
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+<div [ngSwitch]="prod">
+
+  <ion-list class="overview" *ngSwitchCase="'overview'">
+    <ion-label class="title">RECENT REvIEW</ion-label>
+ <ion-label class="title">SIZING</ion-label>
+  <ion-label class="title">ESTIMATED ARRIVAL</ion-label>
+   <ion-label class="estirate">Aug11 - Aug21</ion-label>
+   <ion-label class="title">ESTIMATED SHIPPING</ion-label>
+   <ion-label class="estirate">   € 4000</ion-label>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'description'">
+      <ion-item>
+  
+        <p class="prod_desc"  [innerHTML]="prod_desc"></p>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'rating'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>Luna</h2>
+		 <h2>Luna</h2>
+		  <rating  [(ngModel)]="rate" 
+       readOnly="true"
+       max="5"
+       emptyStarIconName="star-outline" 
+       halfStarIconName="star-half" 
+       starIconName="star" 
+       nullable="false"
+       (ngModelChange)="onModelChange($event)"></rating>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'relatedprod'">
+     <ion-card>
+
+ <ion-item  *ngFor="let category of prod_relatedProducts " (click)="detailpage(category.product_name,category.product_id)">
+   <ion-avatar item-start>
+     <img class="productimg" src="http://aryvartdev.com/reload{{category.image[0].image_url}}">
+   </ion-avatar>
+
+   <h3 class="productname">{{category.product_name}}</h3>
+   <ion-row>
+     <ion-col  style='text-decoration:line-through' >
+ 
+       €{{category.product_price}}
+     </ion-col>
+ 
+     <ion-col class="textblue"  >
+     €{{getrate(category.product_price,category.offer)}}
+     </ion-col>
+   </ion-row>
+
+<button class="radiusbutton" (click)="addToCart(prod_addToCart_id)" ion-button>Add to cart</button>
+ </ion-item>
+
+ 
+
+
+</ion-card>
+
+    </ion-list>
+ 
+    <ion-list *ngSwitchCase="'shippingdetails'">
+<ion-card>
+
+ 
+	    <ion-row class="rate">
+      <ion-col  >
+	     <ion-label class="shipname">Estimated Shipping</ion-label>
+    
+
+      </ion-col>
+  
+      <ion-col >
+        <ion-label class="shiprate">€250</ion-label>
+    
+
+      </ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col  >
+	     <ion-label class="shipname">Availability</ion-label>
+    
+
+      </ion-col>
+  
+      <ion-col >
+        <ion-label class="shipcontent">Ships to India and 73 other countries</ion-label>
+    
+
+      </ion-col>
+    </ion-row>
+	    <ion-row >
+      <ion-col  >
+	     <ion-label class="shipname">Estimated Arrival</ion-label>
+    
+
+      </ion-col>
+  
+      <ion-col >
+        <ion-label class="shipcontent">Aug 11 - Aug 21</ion-label>
+    
+
+      </ion-col>
+    </ion-row>
+
+</ion-card>
+
+    </ion-list>
+ </div>
+</ion-content>
+

@@ -1,0 +1,28 @@
+	
+    <ion-content >
+	
+	<ion-icon (click)="back()"   class="backicon" name="ios-arrow-back"></ion-icon>
+
+
+		 <img src="assets/icon/img1.png" alt="">
+	<form #signinForm="ngForm" novalidate (ngSubmit)="forgetPassUser(signinForm.value, signinForm.valid)">
+ 
+    <div class="form-group forget">
+	<ion-item> <ion-label> <ion-icon class="l_email" name="ios-mail-outline"></ion-icon></ion-label> <ion-input type="email"  class="form-control" name="email" [ngModel]="user.email" 
+    required  #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" id="email"  placeholder="Email" clearInput  type="text" ></ion-input> </ion-item>
+			
+	<small [hidden]="email.valid || (email.pristine && !signinForm.submitted)" class="text-danger">
+       Email is required and format should be <i>abc@doe.com</i>.
+    </small>
+	 
+     </div>
+   
+   
+
+	<button class="forget_btn" type="submit" ion-button block outline [disabled]="!signinForm.valid">Submit</button>
+		
+    </form>
+    
+
+	</ion-content>
+

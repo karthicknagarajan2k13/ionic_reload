@@ -1,3 +1,48 @@
-page-home {
 
+.popover-content {
+    height: 100%;
+    left: 0px;
+}
+
+a.bar-button.bar-button-md.bar-button-default.bar-button-default-md {
+    margin-left: 20px;
+}
+
+span.title.text.text-md.text-md-white {
+       font-size: 12px;
+}img.icon20.sreach {
+    margin-right: 20px;
+}
+img.icon20.sreach {
+        margin-right: 12px;
+}ion-title.title.title-md {
+    text-align: center;
+    margin-right: 0px;
+}ion-label.browse.label.label-md {
+    
+    padding-left: 10px;
+}
+ion-grid.grid {
+   
+    padding-left: 10px;
+
+    padding-bottom: 10px;
+    padding-right: 10px;
+ 
+}
+
+ #notification-button {            
+            position: relative;
+            width: 42px;
+            top:1px;
+             right: 17px;
+            overflow: visible!important;
+        }
+
+#notifications-badge {
+    background-color: red;
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    border-radius: 100%;
 }

@@ -1,0 +1,68 @@
+<!-- <ion-list>
+    <ion-row>
+     <ion-col col-10 >
+ 
+      <ion-icon name="ios-lock-outline"></ion-icon>
+     </ion-col>
+ <ion-col col-90 >
+      <button ion-item (click)="sayaboutpage()">About</button>
+     </ion-col>
+   </ion-row>
+   
+     <button ion-item (click)="saycontactpage()">Contact</button>
+     <button ion-item (click)="saypaypalpage()">Paypal</button>
+     <button ion-item (click)="logout()">Logout</button>
+  
+</ion-list> -->
+
+<ion-content padding>
+
+    <ion-list >
+   
+		 <ion-item class="bg">
+		 <ion-row>
+		 <ion-col class="column">
+		  <div  class="profile_image" (click)="profile()">
+             <img  src="http://aryvartdev.com/reload/uploads/profile/{{userimage}}">
+        </div>
+		 </ion-col>
+		  <ion-col class="name" >
+		  
+		<h2 class="headertext">{{username}}</h2>
+		<h5 class="header5" (click)="profile()" >View Profile</h5>
+		 </ion-col>
+		 </ion-row>
+		     
+           
+            
+        </ion-item>
+        <ion-item class="ionitem" (click)="mycart()">
+            <ion-label>Shopping Cart</ion-label>
+			 <img item-start class="icon20" src="assets/icon/cart-icon.png" alt="">
+            
+        </ion-item>
+        <ion-item class="ionitem" (click)="notification()">
+            <ion-label>Notification</ion-label>
+            <img item-start class="icon20" src="assets/icon/notification.png" alt="">
+            
+        </ion-item>
+		  <ion-item class="ionitem" (click)="saveproduct()">
+            <ion-label>Save Product</ion-label>
+             <img item-start class="icon20" src="assets/icon/heart.png" alt="">
+            
+        </ion-item>
+        <ion-item class="ionitem" (click)="orderhistory()">
+            <ion-label>Order History</ion-label>
+             <img item-start class="icon20" src="assets/icon/order-history.png" alt="">
+            
+        </ion-item>
+		
+        <ion-item class="ionitem" (click)="logout()">
+            <ion-label>Logout</ion-label>
+             <img item-start class="icon20" src="assets/icon/logout.png" alt="">
+            
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>

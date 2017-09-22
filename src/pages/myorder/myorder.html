@@ -1,0 +1,60 @@
+
+<ion-header>
+  <ion-navbar  color="primary">
+
+	
+  <ion-buttons left (click)="back()"  >
+    <a ion-button icon-only>
+    	<ion-icon    name="ios-arrow-back"></ion-icon>
+
+   </a>
+   </ion-buttons>
+
+
+   <ion-title>My Order</ion-title>
+   <ion-buttons (click)="mycart()"  id="notification-button"  right >
+    <a class="icon20 cart" ion-button icon-only>
+      <ion-icon    name="cart"></ion-icon>
+  <ion-badge id="notifications-badge" color="danger">{{carcount}}</ion-badge>
+   </a>
+   </ion-buttons>
+ 
+ </ion-navbar>
+	
+	
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+<img style='margin-top:40%' src="assets/icon/load_blue.gif" alt="" *ngIf="mainListLen2 == 0 && status!=0 ">  
+
+ <img class="emptycart" *ngIf="status == 0" src="assets/icon/empty.png" alt="">
+<p *ngIf="status == 0" class="emptyTextOrder">No orders placed.</p> 
+
+  <ion-item class="myorder" *ngFor="let category of mainList "  let i = index; (click)="goOrderDetail(category)" >
+ 
+ 
+  
+     <h3 class="orderdate">{{category.order_created_data |  date:'MMMM d, y'}}</h3>
+  <ion-row  class="ordernumber">
+
+  <ion-col col-6>
+
+   {{category.order_number  }}
+  </ion-col>
+
+ <ion-col col-4>
+  </ion-col>
+ <ion-icon class="order_arrow" name="ios-arrow-forward" right></ion-icon> 
+  </ion-row>
+ 
+      	
+  </ion-item>
+
+  
+
+
+</ion-content>

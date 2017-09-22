@@ -1,0 +1,280 @@
+
+<ion-header>
+  <ion-navbar  color="primary">
+
+	
+  <ion-buttons left (click)="back()"  >
+    <a ion-button icon-only>
+    	<ion-icon    name="ios-arrow-back"></ion-icon>
+
+   </a>
+   </ion-buttons>
+
+
+   <ion-title>Checkout</ion-title>
+ <ion-buttons (click)="mycart()"  id="notification-button"  right >
+    <a class="icon20 cart" ion-button icon-only>
+      <ion-icon    name="cart"></ion-icon>
+  <ion-badge id="notifications-badge" color="danger">{{carcount}}</ion-badge>
+   </a>
+   </ion-buttons>
+ 
+ </ion-navbar>
+	
+	
+
+</ion-header>
+
+<ion-content>
+
+ 
+
+
+
+<ion-toolbar class="check_ship_toolbar"no-border-top>
+    <ion-segment  (ionChange)="onSegmentChanged($event)" class="check_ship"[(ngModel)]="checkout">
+      <ion-segment-button value="shipping">
+        Shipping
+      </ion-segment-button>
+      <ion-segment-button  disabled="{{isDisabled}}" value="confirmation">
+        Confirmatiom
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+<div [ngSwitch]="checkout">
+    <ion-list *ngSwitchCase="'shipping'">
+
+<ion-row class="check_toogle">
+<ion-col class="ch1" (click)="newAddr()"[ngStyle]="{'background-color': buttonColor1}">
+New Address
+</ion-col>
+<ion-col class="ch2" (click)="savedAddr()" [ngStyle]="{'background-color': buttonColor2}">
+Saved Address
+</ion-col>
+</ion-row>
+
+   
+  <form #signinForm="ngForm" novalidate (ngSubmit)="registerUser(signinForm.value,signinForm,userid,cart)">
+
+ 
+                            <!-- **** EMAIL **** -->
+ 
+    <div class="form-group">
+  <ion-item> <ion-input type="text"  class="form-control" name="email" [ngModel]="user.email" 
+    required  #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" id="email"  placeholder="Email" clearInput  type="text" ></ion-input> </ion-item>
+      
+  <small [hidden]="email.valid || (email.pristine && !signinForm.submitted)" class="text-danger">
+       Email is required and format should be <i>abc@doe.com</i>.
+    </small>
+     </div>
+
+                              <!-- **** FNAME **** -->
+
+      <div class="form-group">
+    <ion-item><ion-input placeholder="FirstName" type="text" clearInput name="fname" id="fname" class="form-control"  [ngModel]="user.fname" 
+        required  #fname="ngModel" type="text"></ion-input> </ion-item>
+
+
+   <small [hidden]="fname.valid || (fname.pristine && !signinForm.submitted)" class="text-danger">
+        FirstName is required 
+      </small>
+     </div>
+
+                                <!-- **** ST ADDR **** -->
+   
+       <div class="form-group">
+   <ion-item><ion-input type="text" placeholder="Street Address" name="straddr"  class="form-control"  [ngModel]="user.straddr" 
+        required  #straddr="ngModel" clearInput  ></ion-input> </ion-item>
+ 
+    <small [hidden]="straddr.valid || (straddr.pristine && !signinForm.submitted)" class="text-danger">
+        Street Address is required
+      </small>
+     </div>
+
+
+                                   <!-- **** ADDRESS **** -->
+
+
+ <div class="form-group">
+   <ion-item> <ion-input type="text" placeholder="Address" name="address"  class="form-control"  [ngModel]="user.address" 
+        required  #address="ngModel" clearInput  ></ion-input> </ion-item>
+ 
+    <small [hidden]="address.valid || (address.pristine && !signinForm.submitted)" class="text-danger">
+        Address is required
+      </small>
+     </div>
+
+                                  <!-- **** PHONE **** -->
+
+     <div class="form-group">
+   <ion-item> <ion-input type="number" placeholder="Mobile" name="mobile"  
+       class="form-control"  [ngModel]="user.mobile"  clearInput #mobile="ngModel" ></ion-input> </ion-item>
+  <small [hidden]="mobile.valid || (mobile.pristine && !signinForm.submitted)" class="text-danger">
+        Mobile Number is required
+      </small>
+     </div>
+
+                                <!-- **** COMPANY NAME **** -->
+
+     <div class="form-group">
+   <ion-item><ion-input type="text" placeholder="Company Name" name="compname"  class="form-control"  [ngModel]="user.compname" 
+        required  #compname="ngModel" clearInput  ></ion-input> </ion-item>
+ 
+    <small [hidden]="compname.valid || (compname.pristine && !signinForm.submitted)" class="text-danger">
+        Company Name is required
+      </small>
+     </div>
+
+                                      <!-- **** COUNTRY **** -->
+
+       <div class="form-group">
+   <ion-item> <ion-input type="text" placeholder="Country" name="country"  class="form-control"  [ngModel]="user.country" 
+        required  #country="ngModel" clearInput  ></ion-input> </ion-item>
+ 
+    <small [hidden]="country.valid || (country.pristine && !signinForm.submitted)" class="text-danger">
+        Country is required
+      </small>
+     </div>
+
+
+                                      <!-- **** CITY **** -->
+
+
+       <div class="form-group">
+   <ion-item>  <ion-input type="text" placeholder="City" name="city"  class="form-control"  [ngModel]="user.city" 
+        required  #city="ngModel" clearInput  ></ion-input> </ion-item>
+ 
+    <small [hidden]="city.valid || (city.pristine && !signinForm.submitted)" class="text-danger">
+        City is required
+      </small>
+     </div>
+
+
+                                   <!-- **** ZIPCODE **** -->
+   <div class="form-group">
+   <ion-item>  <ion-input type="number" placeholder="Zipcode" name="zipcode"  class="form-control"  [ngModel]="user.zipcode" 
+        required minlength="5" maxlength="10" #zipcode="ngModel" clearInput  ></ion-input> </ion-item>
+ 
+    <small [hidden]="zipcode.valid || (zipcode.pristine && !signinForm.submitted)" class="text-danger">
+        Zipcode is required
+      </small>
+     </div>
+
+                                  <!-- **** DESCRIPTION **** -->
+
+   <div class="form-group">
+   <ion-item>  <ion-input type="text" placeholder="Description" name="desc"  
+          [(ngModel)]="desc" clearInput  ></ion-input> </ion-item>
+
+     </div>
+
+
+ 
+      <button class="checkout_ship"  type="submit" ion-button block [disabled]="!signinForm.valid">Continue to payment</button>
+ 
+    </form>
+
+
+<!-- 
+<form #profileForm="ngForm" (ngSubmit)="registerUser(profileForm,userid,cart)">
+   
+  
+   <ion-item class="check_addr">
+    <ion-label floating>Email</ion-label>
+    <ion-input type="email"  [(ngModel)]="email" name="email" ></ion-input>
+  </ion-item>
+  
+  <ion-item class="check_addr">
+    <ion-label floating>First Name</ion-label>
+    <ion-input type="text" [(ngModel)]="fname" name="fname" ></ion-input>
+  </ion-item>
+
+ <ion-item class="check_addr">
+    <ion-label floating>Street Address</ion-label>
+    <ion-input type="text" name="staddress" ngModel></ion-input>
+  </ion-item>
+    <ion-item class="check_addr">
+    <ion-label floating>Address</ion-label>
+    <ion-input type="text" name="address" ngModel></ion-input>
+  </ion-item>
+
+  <ion-item class="check_addr">
+    <ion-label floating>Phone Number</ion-label>
+    <ion-input type="number" name="phone" ngModel></ion-input>
+  </ion-item>
+
+
+ 
+
+  <ion-item class="check_addr">
+    <ion-label floating>Company Name</ion-label>
+    <ion-input type="text" name="compname" ngModel ></ion-input>
+  </ion-item>
+ 
+ 
+
+<ion-item class="check_addr">
+    <ion-label floating>Country</ion-label>
+    <ion-input type="text" name="country" ngModel ></ion-input>
+  </ion-item>
+  
+<ion-item class="check_addr">
+    <ion-label floating>City</ion-label>
+    <ion-input type="text" name="city" ngModel ></ion-input>
+  </ion-item>
+
+ 
+
+    <ion-item class="check_addr">
+    <ion-label floating>Zipcode</ion-label>
+    <ion-input type="number" name="zipcode" ngModel ></ion-input>
+  </ion-item>
+<ion-item class="check_phone">
+    <ion-label floating>Description</ion-label>
+    <ion-input type="text" name="desc" ngModel ></ion-input>
+  </ion-item>
+
+<button ion-button class="checkout_ship">Continue to payment</button>
+</form> -->
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'confirmation'">
+     
+         <h1 class="ship">Shipping To</h1>
+      
+          <p class="addr1" *ngFor="let category of getAddr"class="addr">{{category._NAME}}
+<ion-label class="addr1">{{category.street_address}},{{category.address}}</ion-label>
+<ion-label class="addr1">{{category.city}},{{category.state}},{{category.country}},{{category.zipcode}}
+          
+</ion-label>
+
+
+          <hr>
+ 
+ <ion-item *ngFor="let category of getBillProdDet;let i = index; "> 
+ <ion-avatar  item-start> 
+ <img class="chec_img" src="http://aryvartdev.com/reload{{category.image_url}}"> 
+ </ion-avatar> <h2>{{category.product_name}}</h2> <p class="ship_item_amt">€{{getrate(category.product_price,category.offer)}}</p> 
+ </ion-item>
+
+
+
+<h1 class="ship">Payment Summary</h1>
+<ion-row>
+<ion-col>
+<ion-label class="tot">Order Total</ion-label>
+</ion-col>
+<ion-col>
+<ion-label class="amount">€{{total_price}}</ion-label>
+</ion-col>
+</ion-row>
+
+<button class="payBtn" (click)="makePayment(total_price,orderid,userid)" type="submit" ion-button block>Pay with paypal</button>
+
+
+    </ion-list>
+
+  </div>
+</ion-content>

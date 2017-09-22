@@ -1,0 +1,46 @@
+page-main {
+button.outlinebut.disable-hover.button.button-md.button-outline.button-outline-md.button-block.button-block-md {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+	   height: 7%;
+	    color: #2196f3;
+		    border-color:  #2196f3;
+    text-align: center;
+   border-radius: 3px; 
+}
+button.fullebut.disable-hover.button.button-md.button-default.button-default-md.button-block.button-block-md {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+    border-radius: 3px;
+    width: 90%;
+    margin-top: 10px;
+	background-color: #2196f3;
+  
+    height: 7%;
+}
+ion-card-content.item.item-text-wrap.card-content.card-content-md {
+    text-align: center;
+    color: gray;
+}
+.content-md hr {
+    background-color: rgb(33, 150, 243);
+}
+
+hr {
+    height: 2px;
+    width: 9%;
+    border-width: 0;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+ion-label.label.label-md {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 3px;
+}
+
+
+}

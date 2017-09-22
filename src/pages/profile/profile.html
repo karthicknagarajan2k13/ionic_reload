@@ -1,0 +1,156 @@
+
+
+<ion-header>
+  <ion-navbar  color="primary">
+
+	
+  <ion-buttons left (click)="back()"  >
+    <a ion-button icon-only>
+    	<ion-icon    name="ios-arrow-back"></ion-icon>
+
+   </a>
+   </ion-buttons>
+
+
+   <ion-title>Profile</ion-title>
+
+ 
+ </ion-navbar>
+	
+	
+
+</ion-header>
+
+
+<ion-content class="has-header">
+
+<ion-toolbar class="check_ship_toolbar"no-border-top>
+    <ion-segment  (ionChange)="onSegmentChanged($event)" class="check_ship"[(ngModel)]="viewprofile">
+      <ion-segment-button value="editprofile">
+        Edit Profile
+      </ion-segment-button>
+      <ion-segment-button   value="changepassword">
+        Change Password
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+<div [ngSwitch]="viewprofile">
+    <ion-list *ngSwitchCase="'editprofile'">
+<img class="user_edit" src="assets/icon/edit.png" alt="" (click)="edit()">
+
+
+  <form #profileForm="ngForm" novalidate (ngSubmit)="registerUser(profileForm,userid)">
+ <img class="user_img" src="{{userimage}}" alt="" (click)="presentActionSheet(userid)">
+    <div class="form-group">
+    <ion-item > 
+	<ion-label> 
+	<ion-icon class="save_person" name="ios-person-outline"></ion-icon>
+	</ion-label> 
+	<ion-input disabled="{{isDisabled}}" placeholder="Username" type="text" clearInput name="username" id="username"  [(ngModel)]="username" 
+        required   type="text"></ion-input> </ion-item>
+
+
+     </div>
+
+   
+   <div class="form-group">
+   <ion-item> <ion-label> <ion-icon class="save_mobile" name="ios-call-outline"></ion-icon></ion-label> <ion-input disabled="{{isDisabled}}" type="number" placeholder="Mobile" name="mobile"   
+        required minlength="10" maxlength="12" [(ngModel)]="mobile" clearInput  ></ion-input> </ion-item>
+ 
+  
+</div>
+ 
+      <button class="save_button"  type="submit" [disabled]="!profileForm.valid" ion-button >Save</button>
+ 
+    </form>
+	
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'changepassword'">
+     <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+    <ion-item  class="margintop pass"> 
+	<ion-label> 
+	<ion-icon class="save_person" name="ios-lock-outline"></ion-icon>
+	</ion-label> 
+	<ion-input value="" minlength="5" maxlength="32" formControlName="cpassword" placeholder="Password" type="text" clearInput 
+	
+          type="password"></ion-input> </ion-item>
+
+
+
+
+
+<ion-item no-lines *ngIf="( user.get('cpassword').hasError('required') ) && user.get('cpassword').touched">
+
+<div class="error" *ngIf="user.get('cpassword').hasError('required') && user.get('cpassword').touched">
+Current Password is required
+</div>
+
+</ion-item>
+
+
+
+
+
+    <ion-item  class="margintop"> 
+	<ion-label> 
+	<ion-icon class="save_person" name="ios-lock-outline"></ion-icon>
+	</ion-label> 
+	<ion-input value="" minlength="5" maxlength="32" formControlName="password" placeholder="New password" type="text" clearInput 
+	
+           type="password"></ion-input> </ion-item>
+
+
+
+
+
+<ion-item no-lines *ngIf="( user.get('password').hasError('required') ) && user.get('password').touched">
+
+<div class="error" *ngIf="user.get('password').hasError('required') && user.get('password').touched">
+Password is required
+</div>
+
+</ion-item>
+
+
+
+
+    <ion-item  class="margintop"SS> 
+	<ion-label> 
+	<ion-icon class="save_person" name="ios-lock-outline"></ion-icon>
+	</ion-label> 
+	<ion-input value="" minlength="5" maxlength="32" formControlName="re_password" placeholder="Confirm password" type="text" clearInput 
+	
+          type="password"></ion-input> </ion-item>
+
+
+
+<ion-item no-lines *ngIf="( user.get('re_password').hasError('equalTo') || user.get('re_password').hasError('required') ) && user.get('re_password').touched">
+
+<div class="error" *ngIf="user.get('re_password').hasError('required') && user.get('re_password').touched">
+Confirm password is required
+</div>
+<div class="error" *ngIf="user.get('re_password').hasError('equalTo') && user.get('re_password').touched">
+Password Mismatch
+</div>
+</ion-item>
+
+
+      <button class="save_button" [disabled]="user.invalid"  ion-button >Save</button>
+ 
+
+</form>
+
+       
+    </ion-list>
+
+  </div>
+
+
+
+
+	
+</ion-content>
+

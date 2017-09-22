@@ -1,0 +1,223 @@
+
+
+SCROLL-CONTENT {
+	overflow-y: auto !important;
+}
+
+CODE {
+  background: #EFEFEF;
+}
+
+ion-scroll {
+  white-space: nowrap;
+  height: 150px
+}
+
+ul {
+ padding: 0px;
+
+ &.rating li {
+   padding: 5px !important;
+   background: none;
+   color: #2196f3;
+
+   ion-icon {
+     font-size: 22px;
+   }
+ }
+}
+.ion-md-star-outline:before {
+   content: "\f383";
+   color: rgba(0, 0, 0, 0.5);
+}
+
+.section {
+  display: inline-block;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+ion-slides {
+    display: block;
+    width: 87%;
+    height: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets {
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    /*  top: 287px; */
+}
+ion-icon.rightArrow.icon.icon-md.ion-ios-arrow-forward {
+ content: "\f3d1";
+    margin-top: 34%;
+    position: absolute;
+    margin-left: 94%;
+    font-size: 25px;
+    color: #2196f3;
+}
+.row.head1 {
+    width: 100% !important;
+    height: 7%;
+}
+ion-icon.leftArrow.icon.icon-md.ion-ios-arrow-back {
+    content: "\f3cf";
+    margin-top: 34%;
+    position: absolute;
+    margin-left: 2%;
+    font-size: 25px;
+    color: #2196f3;
+}
+ion-col.colhead.col {
+      margin-left: 9%;
+	      font-weight: bold;
+	white-space: initial;
+	    font-size: 12px;	
+}
+
+
+ion-col.h2c3.col {
+    /* margin-left: 20px; */
+    margin-bottom: 11px;
+    margin-top: -10px;
+    /* margin-right: -35px; */
+    position: relative;
+    left: 55px;
+}
+ion-row.head2.row {
+     width: 60% !important;
+    margin-left: 10%;
+}
+ion-icon.saveicon.icon.icon-md.ion-md-heart {
+    color: #b7b5b5;
+    text-align: right;
+    margin-left: 95px;
+    margin-top: 7px;
+}
+ion-col.textblue.col {
+    color: #2196f3;
+	font-weight: bold;
+    font-size: 17px;
+}
+button.addbut.disable-hover.button.button-md.button-default.button-default-md {
+    border-radius: 13px;
+    height: 100%;
+    font-size: 9px;
+    width: 70%;
+    margin-bottom: 10px;
+	    margin-left: 37px;
+}
+.item-md p.prod_desc {
+ 
+    white-space: initial;
+}
+.row.head1{
+	width: 121%;
+    height: 7%;
+}
+ion-row.head2.row {
+    width: 100%;
+}
+.segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+    border-color: #2196f3;
+    opacity: 1;
+}
+ #notification-button {            
+            position: relative;
+            width: 42px;
+            top:1px;
+             right: 17px;
+            overflow: visible!important;
+        }
+
+#notifications-badge {
+    background-color: red;
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    border-radius: 100%;
+}
+ion-list.overview.list.list-md {
+    margin-left: 10%;
+}
+ion-label.shipname.label.label-md {
+    font-size: 10px;
+    color: #2196f3;
+    font-weight: bold;
+}
+ion-label.title.label.label-md {
+    /* font-style: oblique; */
+    font-weight: bold;
+    /* font-size: 34px; */
+    color: #2196f3 !important;
+}
+ion-label.shiprate.label.label-md {
+    font-weight: bold;
+    font-size: 14px;
+}
+ion-label.shipcontent.label.label-md {
+    white-space: initial;
+}
+ion-col.addCart.col {
+    background: #2196f3;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+ion-col.savePro.col {
+    background: #e0e0e0;
+    padding: 10px;
+}
+ion-row.roo.row {
+    margin-top: 5%;
+    text-align: center;
+}
+ion-icon.save_heart.icon.icon-md.ion-md-heart {
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 5%;
+}
+ion-icon.add_cart.icon.icon-md.ion-md-cart {
+    color: #fff;
+    margin-right: 5%;
+}
+
+ion-segment.prod_seg.segment.segment-md.ng-untouched.ng-pristine.ng-valid {
+
+ display: block;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    ion-segment-button.segment-button {
+        display: inline-block;
+        min-width: 100px;
+        width: auto;
+        background-color:#2196f3;
+    }
+}
+ion-segment.prod_seg.segment.segment-md.ng-valid.ng-touched.ng-dirty{
+     display: block;
+    white-space: nowrap;
+    font-size: 0;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    ion-segment-button.segment-button {
+        display: inline-block;
+        min-width: 100px;
+        width: auto;
+    }
+}

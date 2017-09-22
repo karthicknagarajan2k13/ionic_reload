@@ -1,0 +1,95 @@
+page-outlet {
+ ion-grid{
+        ion-col{
+            padding: 0 !important;
+
+            ion-card{
+                    margin: 3px !important;
+                    width: calc(100% - 6px)  !important;
+
+                    ion-card-title{
+                        font-size: 15px !important;
+                    }
+            }
+        }
+    }
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+  
+ion-label.categoryname.label.label-md {
+    margin-top: 0px !important;
+    margin-bottom: 15px !important;
+
+}
+ion-row.rate.row {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.card-title {
+    position: absolute;
+    top: 9%;
+    font-size: 12px;
+    width: 33%;
+    font-weight: bold;
+    color: #fff;
+    left: 5%;
+    border: thick;
+    text-align: center;
+    background-color: #2196f3;
+    
+}
+  .card-titles {
+     position: absolute;
+    top: 24%;
+    text-align: center;
+    font-size: 2.0em;
+    width: 100%;
+    left: 5%;
+    font-weight: bold;
+    color: #ffffff;
+  }
+.card-text {
+    position: absolute;
+    top: 52%;
+    font-size: 1em;
+    width: 60%;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    left: 36%;
+    border: thick;
+    background-color: #2196f3;
+    margin-left: -6%;
+}
+.recentimg{
+    margin: 0px;
+}
+ion-slide.swiper-slide {
+
+    margin-right: 5px;
+ 
+    width: 50%;
+    max-width: 50%;
+}
+ion-col.redrate.col {
+    color: red;
+    font: bold;
+    font-weight: bold;
+}
+img.recentimg {
+    width: 100%;
+    height: 150px;
+}
+ion-slides {
+    display: block;
+    width: 100%;
+   height: 20%;
+       margin-left: 1%;
+}
+ion-label.browse.label.label-md {
+    padding-left: 13px;
+    font-weight: 500;
+}
+}

@@ -1,0 +1,15 @@
+
+<ion-content class="order_compl">
+<div class="order_bk" style="background-color: #2196f3">
+<!-- <img class="order_back" src="assets/icon/bg.png" alt=""> -->
+<ion-label class="con1">THANK YOU</ion-label>
+<ion-label class="con2">FOR YOUR ORDER</ion-label>
+<ion-label class="con3">Order number : #{{orderSuccessID}}</ion-label>
+<img class="order_logo" src="assets/icon/logo.png" alt="">
+<ion-label class="con4">Estimated Delivery</ion-label>
+<ion-label class="con5">Sep 09,2017</ion-label>
+<button class="track_order" type="submit" (click)="trackOrder()" ion-button block  >Track your order</button>
+<ion-label class="con6">Or</ion-label>
+<button class="ctn_shop" type="submit" (click)="ctnShop()"  ion-button block outline >Continue shopping</button>
+</div>
+</ion-content>

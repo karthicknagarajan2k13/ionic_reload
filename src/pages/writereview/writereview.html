@@ -1,0 +1,57 @@
+
+
+
+
+<ion-header>
+  <ion-navbar hideBackButton color="primary">
+
+	
+	
+  <ion-buttons left (click)="back()"  >
+    <a ion-button icon-only>
+    	<ion-icon    name="ios-arrow-back"></ion-icon>
+
+   </a>
+   </ion-buttons>
+   <ion-title>Review</ion-title>
+
+ </ion-navbar>
+	
+	
+
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+<img class="users_img" src="assets/icon/2017-09-13.png" alt="" (click)="edit()">
+
+ 
+<div class="rating">
+<rating  [(ngModel)]="rate" 
+       readOnly="false"
+       max="5"
+       emptyStarIconName="star-outline" 
+       halfStarIconName="star-half" 
+       starIconName="star" 
+       nullable="false"
+       (ngModelChange)="onModelChange($event)"></rating></div>
+       <form #reviewForm="ngForm" novalidate (ngSubmit)="reviewUser(reviewForm,userid)">
+ <div class="form-group">
+  <ion-item>
+    <ion-label >Headline for your review</ion-label>
+    <ion-input type="text" name="headline" [(ngModel)]="headline"></ion-input>
+  </ion-item>
+  </div>
+<div class="form-group">
+  <ion-item>
+    <ion-label >Write your review here</ion-label>
+    <ion-input type="text" name="review" [(ngModel)]="review"></ion-input>
+  </ion-item>
+  </div>
+   <button class="save_button"  type="submit" ion-button >Save</button>
+ </form>
+</ion-list>
+
+   
+
+</ion-content>

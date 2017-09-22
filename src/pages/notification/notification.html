@@ -1,0 +1,107 @@
+
+<ion-header>
+  <ion-navbar  color="primary">
+
+	
+  <ion-buttons left (click)="back()"  >
+    <a ion-button icon-only>
+    	<ion-icon    name="ios-arrow-back"></ion-icon>
+
+   </a>
+   </ion-buttons>
+
+
+   <ion-title>Notification</ion-title>
+   <ion-buttons (click)="mycart()"  id="notification-button"  right >
+    <a class="icon20 cart" ion-button icon-only>
+    	<ion-icon    name="cart"></ion-icon>
+  <ion-badge id="notifications-badge" color="danger">{{carcount}}</ion-badge>
+   </a>
+   </ion-buttons>
+ 
+ </ion-navbar>
+	
+	
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+ <img class="emptycart" *ngIf="mainListlength == 0 || mainListlength < 0 ||count ==0 " src="assets/icon/empty.png" alt="">
+<p *ngIf="mainListlength == 0 || mainListlength < 0 ||count ==0 " class="emptyTextOrder">No items saved.</p> 
+
+ <img style='margin-top:40%' src="assets/icon/load_blue.gif" alt="" *ngIf="mainListlength2 == 0 && mainListlength!=0">
+<!--  <ion-item class="cart"  *ngFor="let category of mainList "  let i = index; >
+
+
+    <ion-avatar item-start>
+      <img class="productimgs" src="http://aryvartdev.com/reload{{category.image_url}}">
+    </ion-avatar>
+	 
+	    <h3 class="productname">{{category.product_name}}</h3>
+	  <ion-row>
+      <ion-col  class="orate" style='text-decoration:line-through' >
+	  
+        €{{category.product_price}}
+      </ion-col>
+  
+      <ion-col class="textblue"  >
+      €{{getrate(category.product_price,category.offer)}}
+      </ion-col>
+	  <ion-col   >
+      <ion-icon  class="deleteicon"  (click)="deleteproduct(i,category.saved_id,userid)"  name="md-trash"></ion-icon>
+		
+      </ion-col>
+	   </ion-row>
+	
+	      	
+  </ion-item>
+ -->
+  
+  <ion-item class="cart" *ngFor="let category of mainList;let i = index; ">
+  
+		<ion-row>
+		   
+   <ion-avatar item-start>
+      <img class="productimgs" src="http://aryvartdev.com/reload{{category.image_url}}">
+    </ion-avatar>
+	  
+		  
+		       <ion-col class="col2"  >
+	    <h3 class="productname">{{category.product_name}}</h3>
+	 <ion-row>
+	 
+	 
+	    <ion-col class="col4"  class="orate" style='text-decoration:line-through'  >
+    €{{category.product_price}}
+      </ion-col>
+      <ion-col class="textblue"   >
+	  
+       €{{getrate(category.product_price,category.offer)}}
+      </ion-col>
+  
+   
+	          <ion-col   >
+      <ion-icon  class="deleteicon"  (click)="deleteproduct(i,category.saved_id,userid)"  name="md-trash"></ion-icon>
+		
+      </ion-col> 
+    </ion-row>
+	     </ion-col  >
+ 
+		
+ 
+  
+  
+	   </ion-row>
+	
+
+ </ion-item>
+
+  
+	
+
+
+
+</ion-content>

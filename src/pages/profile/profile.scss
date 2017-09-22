@@ -1,0 +1,82 @@
+page-profile {
+
+SCROLL-CONTENT {
+	overflow-y: auto !important;
+}
+
+CODE {
+  background: #EFEFEF;
+}
+
+ion-scroll {
+  white-space: nowrap;
+  height: 150px
+}
+.error {
+    font-size: 80%;
+    color: red;
+    margin-left: 8%;
+    font-style: italic;
+}
+ion-item.margintop.pass.item.item-block.item-md.item-input.ng-invalid.ng-touched.ng-dirty {
+    margin-top: 10%;
+}
+ion-item.item.item-block.item-md.item-input.ng-invalid.input-has-value.item-input-has-value.ng-touched.ng-dirty {
+    margin-left: 4%;
+    margin-right: 5%;
+    margin-top: 10%;
+    width: 90%;
+}
+ion-item.margintop.item.item-block.item-md.item-input.ng-touched.ng-dirty.ng-invalid {
+    margin-top: 1%;
+}
+
+ion-item.margintop.item.item-block.item-md.item-input.ng-untouched.ng-pristine.ng-invalid {
+    margin-top: 10%;
+}
+ion-icon.save_person.icon.icon-md.ion-ios-lock-outline {
+    font-size: 20px;
+    color: #2196f3;
+    font-weight: bold;
+}
+img.user_img {
+       border-radius: 100%;
+    width: 90px;
+    height: 90px;
+    border: 2px solid #387df3;
+    margin-left: 37%;
+}
+img.user_edit {
+    margin-left: 85%;
+    margin-top: 5%;
+    height: 30px;
+    width: 30px;
+}
+
+button.save_button.disable-hover.button.button-md.button-default.button-default-md {
+
+    margin-top: 10%;
+}
+
+button.save_button.button.button-md.button-default.button-default-md {
+    width: 60%;
+    margin-left: 20%;
+    border-radius: 15px;
+    margin-top: 10%;
+}
+ion-icon.save_person.icon.icon-md.ion-ios-person-outline {
+    font-size: 2em;
+    color: #2196f3;
+    font-weight: bold;
+}
+ion-icon.save_email.icon.icon-md.ion-ios-mail-outline {
+ font-size: 2em;
+    color: #2196f3;
+    font-weight: bold;
+}
+ion-icon.save_mobile.icon.icon-md.ion-ios-call-outline {
+ font-size: 2em;
+    color: #2196f3;
+    font-weight: bold;
+}
+}

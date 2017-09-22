@@ -1,0 +1,61 @@
+{
+    "results": [{
+            "id": "1",
+            "name": "Health & Wellness",
+            "icon":"../assets/icon/Jellyfish.jpg"
+        },
+        {
+            "id": "2",
+            "name": "Repair & Maintenance",
+            "icon": "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?w=940&amp;h=650&amp;auto=compress&amp;cs=tinysrgb"
+            
+        },
+        {
+            "id": "3",
+            "name": "Weddings and Event",
+            "icon": "../assets/icon/Chrysanthemum.jpg"
+            
+        },
+        {
+            "id": "4",
+            "name": "Beauty Services",
+            "icon": "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?w=940&amp;h=650&amp;auto=compress&amp;cs=tinysrgb"
+            
+        },
+        {
+            "id": "5",
+            "name": "Home Care and Design",
+            "icon": "../assets/icon/Desert.jpg"
+            
+        },
+        {
+            "id": "6",
+            "name": "Academic Tutors",
+            "icon": "../assets/icon/Koala.jpg"
+        },
+        {
+            "id": "7",
+            "name": "Hobbies and Interest",
+            "icon": "../assets/icon/Lighthouse.jpg"
+           
+        },
+        {
+            "id": "8",
+            "name": "Personal Services",
+             "icon": "../assets/icon/Penguins.jpg"
+           
+        },
+        {
+            "id": "9",
+            "name": "Business Services",
+            "icon": "../assets/icon/Tulips.jpg"
+           
+        },
+        {
+            "id": "9",
+            "name": "Business Services",
+            "icon": "../assets/icon/Hydrangeas.jpg"
+           
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+
+<ion-header>
+  <ion-navbar  color="primary">
+
+	
+  <ion-buttons left (click)="back()"  >
+    <a ion-button icon-only>
+    	<ion-icon    name="ios-arrow-back"></ion-icon>
+
+   </a>
+   </ion-buttons>
+
+
+   <ion-title>My Bag</ion-title>
+ <ion-buttons  id="notification-button"  right >
+    <a class="icon20 cart" ion-button icon-only>
+    	<ion-icon   name="cart"></ion-icon>
+  <ion-badge id="notifications-badge" color="danger">{{carcount}}</ion-badge>
+   </a>
+   </ion-buttons>
+ 
+ </ion-navbar>
+	
+	
+
+</ion-header>
+
+
+<ion-content padding>
+
+<img class="emptycart" *ngIf="mainListlength == 0 ||  carcount==0" src="assets/icon/empty.png" alt="">
+<p *ngIf="mainListlength == 0 ||  carcount==0"  class="emptyText">Your shopping cart is empty.</p>
+ <img style='margin-top:40%' src="assets/icon/load_blue.gif" alt="" *ngIf="mainListlength2 == 0 && mainListlength!=0 && carcount!=0">
+<!-- <div class="nodata" *ngIf="mainListlength == 0 ||  carcount==0" > Your cart is empty.</div> -->
+
+
+  <ion-item class="cart" *ngFor="let category of mainList;let i = index; ">
+  
+		<ion-row>
+		     <ion-col class="col1" >
+   <ion-avatar item-start>
+      <img class="productimg" src="http://aryvartdev.com/reload{{category.image_url}}">
+    </ion-avatar>
+	      </ion-col  >
+		       <ion-col col-6 class="col2"  >
+	    <h3 class="productname">{{category.product_name}}</h3>
+	 <ion-row>
+	 
+	  <ion-col class="orate"  style='text-decoration:line-through' >
+	  
+        €{{category.product_price}}
+      </ion-col>
+	    <ion-col class="col4"  >
+      €{{getrate(category.product_price,category.offer,category.quantity)}}
+      </ion-col>
+     
+  
+   
+	 
+    </ion-row>
+	
+       
+      <ion-icon  class="deleteicon"  (click)="deleteproduct(i,category.cart_id,userid)"  name="md-trash"></ion-icon>
+		
+     
+	     </ion-col  >
+		 
+		 
+     <ion-col class="col3" >
+	 
+
+	   <ion-row>
+	    <img class="img_plus" src="assets/icon/plus.png" alt="" (click)="add(category.product_quantity,category.product_id,i,category.quantity,category.product_price)">
+       
+	  </ion-row>
+	  <ion-row>
+	     <button class="quantiybutton" ion-button>{{category.quantity}}</button>
+ 	  
+	  </ion-row>
+	   <ion-row>
+	   	 <img class="img_minus" src="assets/icon/minus.png" alt="" (click)="sub(category.product_quantity,category.product_id,i,category.quantity)">
+	  
+ 	  
+	    </ion-row>
+	    
+	 
+	 
+	
+	 </ion-col>
+		
+ 
+  
+	   </ion-row>
+	
+
+ </ion-item>
+
+  
+	
+
+<button *ngIf="mainListlength > 0 && carcount>0"  class="cartBtn" (click)="placeorder()" type="submit" ion-button block>Place this order : €{{total_price}}</button>
+
+
+	
+</ion-content>

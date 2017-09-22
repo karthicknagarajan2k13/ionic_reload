@@ -1,0 +1,41 @@
+
+    <ion-content >
+	
+	<ion-icon (click)="back()"   class="backicon" name="ios-arrow-back"></ion-icon>
+
+
+		 <img src="assets/icon/img1.png" alt="">
+	<form #signinForm="ngForm" novalidate (ngSubmit)="loginUser(signinForm.value, signinForm.valid)">
+ 
+    <div class="form-group">
+	<ion-item> <ion-label> <ion-icon class="l_email" name="ios-mail-outline"></ion-icon></ion-label> <ion-input type="email"  class="form-control" name="email" [ngModel]="user.email" 
+    required  #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" id="email"  placeholder="Email" clearInput  type="text" ></ion-input> </ion-item>
+			
+	<small [hidden]="email.valid || (email.pristine && !signinForm.submitted)" class="text-danger">
+       Email is required and format should be <i>abc@doe.com</i>.
+    </small>
+	 
+     </div>
+   
+   <div class="form-group">
+    <ion-item> <ion-label> <ion-icon class="l_pass" name="ios-lock-outline"></ion-icon></ion-label> <ion-input type="password" placeholder="Password" name="password"  class="form-control"  [ngModel]="user.password" 
+        required minlength="5" maxlength="32" #password="ngModel" clearInput  ></ion-input> </ion-item>
+ 
+    <small [hidden]="password.valid || (password.pristine && !signinForm.submitted)" class="text-danger">
+        Password is required (minimum 5 characters).
+      </small>
+      <!--<pre *ngIf="username.errors" class="margin-20">{{ username.errors | json }}</pre>-->
+    </div>
+ 
+     <ion-label text-right (click)="goForgetPass()"> Forget Password ?</ion-label> 
+
+	<button class="outlinebut" type="submit"  [disabled]="!signinForm.valid" ion-button block outline >Login</button>
+		<!-- [disabled]="!signinForm.valid" -->
+    </form>
+		
+		 <ion-label text-center> or</ion-label>
+		<button class="fullebut" (click)="doFbLogin()" ion-button block>Facebook</button>
+		<button class="fullegoogle" (click)="glogin()" ion-button block>Google +</button>
+
+
+	</ion-content>

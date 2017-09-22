@@ -1,0 +1,65 @@
+<!--
+  Generated template for the CategorypagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar hideBackButton="true"  color="primary">
+
+	
+  <ion-buttons left (click)="back()"  >
+    <a ion-button icon-only>
+    	<ion-icon    name="ios-arrow-back"></ion-icon>
+
+   </a>
+   </ion-buttons>
+
+
+   <ion-title>Sub Category</ion-title>
+
+ 
+ </ion-navbar>
+	
+	
+
+</ion-header>
+
+<ion-content padding>
+<div class="subcat" >
+  <ion-slides   slidesPerView="3">
+   <ion-slide *ngFor="let category of categoryss" #slides>
+ <button (click)="categorypage(category.subcategory_id)"   class="subcatbutton" ion-button color="dark" round>{{category.subcategory_name}}</button>
+ 
+   </ion-slide>
+ </ion-slides>
+ </div>
+ 
+ 
+ 
+  <ion-grid>
+    <ion-row *ngFor="let i of rows">
+      <ion-col *ngFor="let category of mainList | slice:(i*2):(i+1)*2" width-33>
+        <ion-card (click)="detailpage(category.product_name,category.product_id)">
+      <img  class="recentimg" src="http://aryvartdev.com/reload/{{category.image[0].image_url}}" /> 
+
+		            <div class="card-title" ng-if="category.offer != '' || category.offer != undefined">{{getoffer(category.offer)}}</div>
+	   <div class="card-text" >{{getdisplytext(category.product_quantity , category.almost_gone)}}</div> 
+		    <ion-row class="rate">
+      <ion-col style='text-decoration:line-through' >
+	  
+        €{{category.product_price}}
+      </ion-col>
+  
+      <ion-col  >
+      €{{getrate(category.product_price,category.offer)}}
+      </ion-col>
+    </ion-row>
+   <ion-label class="categoryname">50K bought this</ion-label>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+
+</ion-content>

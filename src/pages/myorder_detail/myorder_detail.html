@@ -1,0 +1,72 @@
+
+<ion-header>
+  <ion-navbar  color="primary">
+
+	
+  <ion-buttons left (click)="back()"  >
+    <a ion-button icon-only>
+    	<ion-icon    name="ios-arrow-back"></ion-icon>
+
+   </a>
+   </ion-buttons>
+
+
+   <ion-title>My Order Detail</ion-title>
+
+ 
+ </ion-navbar>
+	
+	
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+ <img style='margin-top:40%' src="assets/icon/load_blue.gif" alt="" *ngIf="mainListLen2 == 0 ">
+
+   <ion-item class="cart" *ngFor="let category of mainList;let i = index; ">
+  
+    <ion-row> 
+       
+   <ion-avatar item-start>
+      <img class="productimgs" src="http://aryvartdev.com/reload{{category.product_image[0].image_url}}">
+    </ion-avatar> 
+    
+      
+           <ion-col class="col2"  >
+      <h3 class="productname">{{category.product_name}}</h3>
+   <ion-row>
+   
+   
+      <ion-col class="col4"  class="orate" style='text-decoration:line-through'  >
+    €{{category.product_price}}
+      </ion-col>
+      <ion-col class="textblue"   >
+    
+        €{{getrate(category.product_price,category.offer)}}
+      </ion-col>
+  
+   
+            <ion-col>
+      <!-- <ion-icon  class="deleteicon"  (click)="reviewpage()"  name="md-trash"></ion-icon> -->
+   
+      </ion-col> 
+    </ion-row>
+    <button class="review_btn"  (click)="reviewpage()" type="submit" ion-button block  >Review</button>
+       </ion-col  >
+ 
+    
+ 
+  
+  
+     </ion-row>
+  
+
+ </ion-item>
+
+  
+
+
+</ion-content>

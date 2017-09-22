@@ -1,0 +1,93 @@
+
+ion-col.coln3.col {
+    margin-left: 5%;
+
+}
+ion-col.coln4.col {
+    margin-right: 5%;
+    
+}
+ion-item.check_addr.item.item-block.item-md.item-input.item-label-floating {
+    margin-left: 3%;
+    margin-right: 5%;
+    width: 90%;
+    
+}
+
+button.checkout_ship.disable-hover.button.button-md.button-default.button-default-md {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+  
+    border-radius: 20px;
+}
+ion-row.check_toogle.row {
+    text-align: center;
+    background: #2196f3;
+    border: 1px solid #2196f3;
+    margin: 25px;
+    border-radius: 5px;
+  
+}
+ion-col.ch1.col {
+    border-right: 1px solid #2196f3;
+     border-radius: 5px 0px 0px 5px;
+      padding: 5px;
+}
+ion-col.ch2.col {
+    
+         border-radius: 0px 5px 5px 0px;
+padding: 5px;
+}
+h1.ship {
+    font-size: 15px;
+    margin-left: 5%;
+}
+p.addr {
+    font-size: 12px;
+    margin-left: 5%;
+        color: #000;
+}
+
+
+ion-label.addr.label.label-md {
+    margin-left: 20px;
+    color: #8d8787;
+}
+ion-label.pay.label.label-md {
+    margin-left: 20px;
+}
+
+ion-label.tot.label.label-md {
+
+    color: #000000;
+    font-size: 18px;
+    margin-left: 20px !important;
+}
+
+
+
+ion-label.amount.label.label-md {
+    margin-left: 130px;
+    color: #2196f3;
+    font-size: 18px;
+    font-weight: bold;
+}
+button.payBtn.disable-hover.button.button-md.button-default.button-default-md.button-block.button-block-md {
+    width: 70%;
+    margin-left: 15%;
+    border-radius: 20px;
+    margin-bottom: 15%;
+    margin-top: 15%;
+}
+p.ship_item_amt {
+    color: #2196f3;
+    font-weight: bold;
+    margin-top: 5px;
+}
+ion-label.addr1.label.label-md {
+    color: #000;
+}
+img.chec_img {
+    border-radius: 0% !important;
+}
